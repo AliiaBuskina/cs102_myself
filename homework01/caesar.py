@@ -46,7 +46,7 @@ def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
             if l.islower():
                 l = chr((ord(l) - shift - ord("a")) % 26 + ord("a"))
         plaintext += l
-    return plaintext
+        return plaintext
 
 
 def caesar_breaker_brute_force(ciphertext: str, dictionary: tp.Set[str]) -> int:
