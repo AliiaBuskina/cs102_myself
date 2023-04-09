@@ -1,7 +1,6 @@
 import random
 import typing as tp
 
-
 def is_prime(n: int) -> bool:
     """
     Tests to see if a number is prime.
@@ -26,7 +25,6 @@ def is_prime(n: int) -> bool:
         i += 6
     return True
 
-
 def gcd(a: int, b: int) -> int:
     """
     Euclid's algorithm for determining the greatest common divisor.
@@ -42,7 +40,6 @@ def gcd(a: int, b: int) -> int:
         else:
             b = b % a
     return a + b
-
 
 def multiplicative_inverse(e: int, phi: int) -> int:
     """
@@ -69,7 +66,6 @@ def multiplicative_inverse(e: int, phi: int) -> int:
 
     return x % phi
 
-
 def generate_keypair(
     p: int, q: int
 ) -> tp.Tuple[tp.Tuple[int, int], tp.Tuple[int, int]]:
@@ -87,7 +83,6 @@ def generate_keypair(
     d = multiplicative_inverse(e, phi)
     return ((e, n), (d, n))
 
-
 def encrypt(pk: tp.Tuple[int, int], plaintext: str) -> tp.List[int]:
     # Unpack the key into it's components
     key, n = pk
@@ -96,7 +91,6 @@ def encrypt(pk: tp.Tuple[int, int], plaintext: str) -> tp.List[int]:
     cipher = [(ord((char) ** key) % n) for char in plaintext]
     # Return the array of bytes
     return cipher
-
 
 def decrypt(pk: tp.Tuple[int, int], ciphertext: tp.List[int]) -> str:
     # Unpack the key into its components
