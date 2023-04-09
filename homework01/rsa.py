@@ -74,9 +74,8 @@ def generate_keypair(p: int, q: int) -> tp.Tuple[tp.Tuple[int, int], tp.Tuple[in
         raise ValueError("Both numbers must be prime.")
     elif p == q:
         raise ValueError("p and q cannot be equal")
-
-    n=p*q
-    phi=(p-1)*(q-1)
+    n = p * q
+    phi = (p - 1) * (q - 1)
     e = random.randrange(1, phi)
     g = gcd(e, phi)
     while g != 1:

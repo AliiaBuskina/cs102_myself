@@ -10,7 +10,6 @@ def encrypt_vigenere(plaintext: str, keyword: str) -> str:
     'LXFOPVEFRNHR'
     """
     ciphertext = ""
-    ciphertext = ""
     if len(plaintext) > len(keyword):
         keyword *= len(plaintext) // len(keyword) + 1
     for i in range(len(plaintext)):
@@ -28,8 +27,6 @@ def encrypt_vigenere(plaintext: str, keyword: str) -> str:
         ciphertext += bc
 
     return ciphertext
-
-
 
 def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
     """
