@@ -24,6 +24,7 @@ def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
         ciphertext += l
     return ciphertext
 
+
 def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
     """
     Decrypts a ciphertext using a Caesar cipher.
@@ -46,6 +47,8 @@ def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
                 l = chr((ord(l) - shift - ord("a")) % 26 + ord("a"))
         plaintext += l
     return plaintext
+
+
 def caesar_breaker_brute_force(ciphertext: str, dictionary: tp.Set[str]) -> int:
     """
     Brute force breaking a Caesar cipher.
